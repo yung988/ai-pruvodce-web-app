@@ -101,8 +101,8 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 rounded-xl border border-border bg-card p-4 transition-colors hover:border-primary/50"
                 >
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
-                    <span className="font-bold text-primary">{tool.name[0]}</span>
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 overflow-hidden">
+                    <img src={tool.logo} alt={tool.name} className="h-8 w-8 object-contain" />
                   </div>
                   <div className="flex-1">
                     <p className="font-medium">{tool.name}</p>

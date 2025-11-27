@@ -79,8 +79,21 @@ export function UseCaseWizard() {
                                 onClick={() => setSelectedUseCase(useCase.id)}
                                 className="group relative flex flex-col items-start gap-4 rounded-2xl border border-border bg-card p-6 text-left transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5"
                             >
-                                <div className={cn("rounded-xl p-3 transition-colors", useCase.color)}>
-                                    <useCase.icon className="h-6 w-6" />
+                                <div className="flex w-full items-start justify-between">
+                                    <div className={cn("rounded-xl p-3 transition-colors", useCase.color)}>
+                                        <useCase.icon className="h-6 w-6" />
+                                    </div>
+                                    <div className="flex -space-x-2">
+                                        {useCase.recommended.slice(0, 3).map((toolId) => {
+                                            const tool = aiTools.find((t) => t.id === toolId)
+                                            if (!tool) return null
+                                            return (
+                                                <div key={tool.id} className="relative h-8 w-8 overflow-hidden rounded-full border-2 border-background bg-background">
+                                                    <img src={tool.logo} alt={tool.name} className="h-full w-full object-cover" />
+                                                </div>
+                                            )
+                                        })}
+                                    </div>
                                 </div>
                                 <div>
                                     <h3 className="font-semibold text-lg">{useCase.title}</h3>
@@ -105,27 +118,27 @@ export function UseCaseWizard() {
                         </div>
                     </div>
 
-                     {/* Free Strategy */}
-                     <div className="rounded-2xl border-2 border-green-500/20 bg-green-500/5 p-6 mb-6">
-                         <h3 className="text-lg font-semibold text-green-700 dark:text-green-400 mb-3">
-                             💡 Strategie pro ZDARMA používání:
-                         </h3>
-                         <p className="text-green-800 dark:text-green-300">
-                             {selectedData?.freeStrategy}
-                         </p>
-                     </div>
+                    {/* Free Strategy */}
+                    <div className="rounded-2xl border-2 border-green-500/20 bg-green-500/5 p-6 mb-6">
+                        <h3 className="text-lg font-semibold text-green-700 dark:text-green-400 mb-3">
+                            💡 Strategie pro ZDARMA používání:
+                        </h3>
+                        <p className="text-green-800 dark:text-green-300">
+                            {selectedData?.freeStrategy}
+                        </p>
+                    </div>
 
-                     <div className="grid gap-6">
-                         {recommendedTools.map((tool) => (
-                             <ToolCard key={tool.id} tool={tool} />
-                         ))}
-                     </div>
+                    <div className="grid gap-6">
+                        {recommendedTools.map((tool) => (
+                            <ToolCard key={tool.id} tool={tool} />
+                        ))}
+                    </div>
 
-                     <div className="text-center pt-8">
-                         <Button variant="outline" onClick={() => setSelectedUseCase(null)}>
-                             Vybrat jiný úkol
-                         </Button>
-                     </div>
+                    <div className="text-center pt-8">
+                        <Button variant="outline" onClick={() => setSelectedUseCase(null)}>
+                            Vybrat jiný úkol
+                        </Button>
+                    </div>
                 </div>
             )}
         </div>

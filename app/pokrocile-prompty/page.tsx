@@ -4,12 +4,12 @@ import { Footer } from "@/components/footer"
 import { CopyButton } from "@/components/copy-button"
 import {
   promptStructure,
-  advancedExamples,
   promptTips,
   promptingTechniques,
   learningPrompts,
   promptFrameworks,
 } from "@/lib/advanced-prompts-data"
+import { ConversationViewer } from "@/components/conversation-viewer"
 import {
   User,
   FileText,
@@ -140,77 +140,17 @@ export default function AdvancedPromptsPage() {
           </div>
         </section>
 
-        {/* Examples */}
+        {/* Interactive Conversations */}
         <section className="py-12 border-b border-border">
-          <div className="mx-auto max-w-5xl space-y-12 px-4 lg:px-8">
-            <h2 className="text-center text-2xl font-bold">Praktické ukázky ze života</h2>
-            {advancedExamples.map((example) => (
-              <article key={example.id} className="rounded-2xl border border-border bg-card overflow-hidden shadow-sm">
-                <div className="border-b border-border bg-secondary/30 p-6">
-                  <h2 className="text-xl font-semibold">{example.title}</h2>
-                </div>
+          <div className="mx-auto max-w-7xl space-y-8 px-4 lg:px-8">
+            <div className="text-center">
+              <h2 className="text-2xl font-bold">Ukázky konverzací v praxi</h2>
+              <p className="text-muted-foreground mt-2">
+                AI není jen o jednom příkazu. Podívejte se, jak vypadá skutečná konverzace.
+              </p>
+            </div>
 
-                {"isConversation" in example && example.isConversation ? (
-                  // Conversation/iterative example
-                  <div className="p-6 space-y-6">
-                    <p className="text-sm text-muted-foreground">
-                      AI je KONVERZACE, ne jednorázový dotaz. Ukázka iterativní práce:
-                    </p>
-                    {example.steps?.map((step, idx) => (
-                      <div key={idx} className="space-y-3">
-                        <div className="flex items-center gap-2">
-                          <span className="flex h-7 w-7 items-center justify-center rounded-full bg-primary text-sm font-bold text-primary-foreground">
-                            {step.step}
-                          </span>
-                          <span className="text-sm font-medium text-muted-foreground">
-                            {idx === 0 ? "První zpráva" : idx === 1 ? "Po odpovědi" : "Další iterace"}
-                          </span>
-                        </div>
-                        <div className="relative rounded-xl bg-secondary/50 p-4">
-                          <pre className="whitespace-pre-wrap text-sm font-sans">{step.prompt}</pre>
-                          <div className="absolute right-3 top-3">
-                            <CopyButton text={step.prompt} />
-                          </div>
-                        </div>
-                        {idx < (example.steps?.length || 0) - 1 && (
-                          <div className="flex justify-center">
-                            <ArrowRight className="h-5 w-5 text-muted-foreground" />
-                          </div>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                ) : (
-                  // Regular comparison example
-                  <div className="grid gap-6 p-6 lg:grid-cols-2">
-                    {/* Bad prompt */}
-                    <div className="space-y-3">
-                      <div className="flex items-center gap-2 text-destructive">
-                        <ThumbsDown className="h-5 w-5" />
-                        <span className="font-medium">Jak to dělá začátečník:</span>
-                      </div>
-                      <div className="rounded-xl border border-destructive/30 bg-destructive/5 p-4">
-                        <p className="text-sm italic text-muted-foreground">"{example.badPrompt}"</p>
-                      </div>
-                    </div>
-
-                    {/* Good prompt */}
-                    <div className="space-y-3 lg:col-span-2">
-                      <div className="flex items-center gap-2 text-primary">
-                        <ThumbsUp className="h-5 w-5" />
-                        <span className="font-medium">Jak to má vypadat:</span>
-                      </div>
-                      <div className="relative rounded-xl border border-primary/30 bg-primary/5 p-4">
-                        <pre className="whitespace-pre-wrap text-sm font-sans">{example.goodPrompt}</pre>
-                        <div className="absolute right-3 top-3">
-                          <CopyButton text={example.goodPrompt || ""} />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </article>
-            ))}
+            <ConversationViewer />
           </div>
         </section>
 

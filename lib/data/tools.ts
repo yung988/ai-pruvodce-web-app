@@ -7,8 +7,8 @@ export const aiTools: AITool[] = [
         provider: "DeepSeek",
         logo: "/logos/deepseek.svg",
         website: "https://chat.deepseek.com",
-        shortDescription: "Open-source gigant s nejlevnějším API a špičkovým reasoning.",
-        description: "DeepSeek nabízí výkon srovnatelný s nejlepšími komerčními modely, ale zcela zdarma nebo za zlomek ceny. Modely V3.2 a R1 vynikají v logice, programování a dlouhém kontextu. Open-source s možností vlastního hostingu.",
+        shortDescription: "Spolehlivý textový asistent, který je zcela ZDARMA.",
+        description: "DeepSeek je čistě textový asistent, který vyniká v češtině a je zcela zdarma. Nemá generování obrázků, ale o to lépe rozumí textu a logice. Je to spolehlivý parťák na povídání, učení a práci s dokumenty, který otevřeně přizná, když něco neví.",
         models: [
             {
                 id: "deepseek-v3-2",
@@ -27,9 +27,9 @@ export const aiTools: AITool[] = [
                 description: "Špičkový reasoning model pro komplexní logiku a matematiku."
             }
         ],
-        bestFor: ["Programování a debugging", "Složitá logika a matematika", "Dlouhé konverzace (levné API)"],
-        pros: ["Zdarma přístup k top modelům", "Špičkový reasoning (R1)", "Velmi levné API", "Open weights (V3)"],
-        cons: ["Čínský původ (privacy concerns)", "Slabší v kreativním psaní", "Občasné výpadky serverů"],
+        bestFor: ["Vysvětlování a učení", "Práce s českým textem", "Programování a logika", "Práce s dokumenty"],
+        pros: ["Zcela ZDARMA", "Výborná čeština", "Upřímnost (přizná chybu)", "Velký kontext"],
+        cons: ["Nemá generování obrázků", "Čínský původ (privacy concerns)", "Občasné výpadky serverů"],
         features: {
             imageGeneration: false,
             webSearch: true,
@@ -47,8 +47,8 @@ export const aiTools: AITool[] = [
         provider: "OpenAI",
         logo: "/logos/OpenAI_logo.svg",
         website: "https://chatgpt.com",
-        shortDescription: "Univerzální standard a nejpopulárnější AI asistent.",
-        description: "ChatGPT od OpenAI je synonymem pro AI. Nabízí nejvšestrannější sadu funkcí včetně generování obrázků (DALL-E 3), analýzy dat a pokročilého hlasového režimu. GPT-5.1 přináší adaptivní reasoning a personalizaci.",
+        shortDescription: "Chytrý spolužák a asistent, který nikdy nespí.",
+        description: "ChatGPT (GPT-5.1 Thinking) je univerzální asistent, který umí číst, psát, plánovat a pracovat s dokumenty. U složitějších úkolů používá 'reasoning' – promyslí si postup v krocích, než odpoví. Ideální na vysvětlování, učení i práci.",
         models: [
             {
                 id: "gpt-5-1-instant",
@@ -56,7 +56,7 @@ export const aiTools: AITool[] = [
                 contextWindow: 128000,
                 pricing: { input: 2.50, output: 10.00, isFree: true },
                 capabilities: { reasoning: 9, coding: 9, creativeWriting: 9 },
-                description: "Rychlý režim s konverzačním a přátelským stylem."
+                description: "Rychlý režim pro každodenní úkoly a konverzaci."
             },
             {
                 id: "gpt-5-1-thinking",
@@ -64,7 +64,7 @@ export const aiTools: AITool[] = [
                 contextWindow: 128000,
                 pricing: { input: 15.00, output: 60.00, isFree: false },
                 capabilities: { reasoning: 10, coding: 10, creativeWriting: 8 },
-                description: "Adaptivní reasoning - mění čas přemýšlení podle složitosti."
+                description: "Adaptivní reasoning - promyslí si postup před odpovědí."
             },
             {
                 id: "gpt-5-1-codex-max",
@@ -72,12 +72,12 @@ export const aiTools: AITool[] = [
                 contextWindow: 1000000,
                 pricing: { input: 15.00, output: 60.00, isFree: false },
                 capabilities: { reasoning: 10, coding: 10, creativeWriting: 7 },
-                description: "Agentic coding model, 30+ hodin autonomního kódování."
+                description: "Agentic coding model pro složité programování."
             }
         ],
-        bestFor: ["Každodenní úkoly", "Generování obrázků", "Hlasová konverzace", "Analýza dat"],
-        pros: ["Nejlepší UX a aplikace", "Multimodální (vidí, slyší, mluví)", "Obrovská komunita a GPTs", "Spolehlivost"],
-        cons: ["Přísné limity ve free verzi", "Občas 'líný' při kódování", "O1 je velmi drahý"],
+        bestFor: ["Vysvětlování a učení", "Psaní e-mailů a textů", "Plánování a nápady", "Práce s dokumenty a Excelem"],
+        pros: ["Umí přemýšlet v krocích (Thinking)", "Adaptivní - rychlý nebo důkladný", "Práce s webem a soubory", "Univerzální 'vše v jednom'"],
+        cons: ["Nemá osobní zkušenosti", "Může 'halucinovat' (ověřovat fakta)", "Nevidí do soukromých účtů", "Limity ve free verzi"],
         features: {
             imageGeneration: true,
             webSearch: true,
@@ -96,7 +96,7 @@ export const aiTools: AITool[] = [
         logo: "/logos/Claude_AI_symbol.svg",
         website: "https://claude.ai",
         shortDescription: "Nejlidštější AI s citem pro psaní a kódování.",
-        description: "Claude od Anthropic je miláčkem vývojářů a spisovatelů. Jeho 4.5 série přináší best-in-class kódování s 30+ hodinami autonomní práce, rozšířený kontext až 1M tokenů a vylepšené computer use schopnosti.",
+        description: "Claude Sonnet 4.5 je nejnovější model od Anthropic, navržený pro efektivitu a přirozenou konverzaci. Vyniká v programování, analýze dokumentů a kreativním psaní. Má silné etické zábrany a 'nuancované myšlení' – čte mezi řádky.",
         models: [
             {
                 id: "claude-4-5-opus",
@@ -125,7 +125,7 @@ export const aiTools: AITool[] = [
                 description: "Rychlý a levný model pro běžné úkoly."
             }
         ],
-        bestFor: ["Psaní textů a copywritingu", "Programování (Artifacts)", "Analýza dlouhých dokumentů"],
+        bestFor: ["Psaní textů a copywritingu", "Programování (Artifacts)", "Analýza dlouhých dokumentů", "Osobní asistent"],
         pros: ["Nejpřirozenější čeština", "Artifacts (náhled kódu/webu)", "Velký kontext bez ztráty paměti", "Bezpečný a etický"],
         cons: ["Přísné limity zpráv (i u placené verze)", "Nemá generování obrázků", "Občas příliš opatrný"],
         features: {
@@ -232,30 +232,30 @@ export const aiTools: AITool[] = [
         name: "Grok",
         provider: "xAI",
         logo: "/logos/xai.ico",
-        website: "https://x.com/i/grok",
-        shortDescription: "Rebel s real-time daty z X a špičkovými obrázky.",
-        description: "Grok 4.1 od Elona Muska je integrován přímo do sítě X. Má real-time přístup k datům z tweetů, vylepšenou kreativitu a emocionální inteligenci. Thinking režim pro důkladné odpovědi, Fast režim pro rychlost.",
+        website: "https://grok.com",
+        shortDescription: "Nejsilnější, upřímný a vtipný model bez cenzury.",
+        description: "Grok 4 od xAI je navržený tak, aby byl maximálně užitečný, upřímný a vtipný (inspirovaný Stopařovým průvodcem). Nemá zbytečnou cenzuru, skvěle zvládá češtinu, matematiku i programování. Má přístup k aktuálním informacím v reálném čase.",
         models: [
             {
                 id: "grok-4-1-thinking",
                 name: "Grok 4.1 Thinking",
                 contextWindow: 128000,
-                pricing: { input: 2.00, output: 10.00, isFree: false },
-                capabilities: { reasoning: 10, coding: 9, creativeWriting: 9 },
-                description: "Důkladný režim s hlubším reasoning."
+                pricing: { input: 0, output: 0, isFree: true },
+                capabilities: { reasoning: 10, coding: 10, creativeWriting: 10 },
+                description: "Plný reasoning režim pro složité úvahy a vědu."
             },
             {
                 id: "grok-4-1-fast",
                 name: "Grok 4.1 Fast",
                 contextWindow: 128000,
-                pricing: { input: 2.00, output: 10.00, isFree: false },
-                capabilities: { reasoning: 9, coding: 8, creativeWriting: 9 },
-                description: "Rychlý režim pro okamžité odpovědi."
+                pricing: { input: 0, output: 0, isFree: true },
+                capabilities: { reasoning: 9, coding: 9, creativeWriting: 10 },
+                description: "Rychlý režim pro okamžité odpovědi a zábavu."
             }
         ],
-        bestFor: ["Aktuální zprávy a trendy", "Generování obrázků (Flux)", "Necenzurovaný humor"],
-        pros: ["Real-time data z X", "Špičkové generování obrázků", "Méně 'woke' bias", "Zábavný režim"],
-        cons: ["Nutné předplatné X Premium", "Může být vulgární/urážlivý", "Menší ekosystém"],
+        bestFor: ["Domácí úkoly a vysvětlování", "Zábava a memečka", "Aktuální zprávy", "Programování"],
+        pros: ["Dostupný ZDARMA (s limity)", "Bez zbytečné cenzury a moralizování", "Skvělá čeština a humor", "Real-time informace"],
+        cons: ["Limity zpráv ve free verzi", "Může být 'politically incorrect'", "Méně formální než ostatní"],
         features: {
             imageGeneration: true,
             webSearch: true,
@@ -263,8 +263,8 @@ export const aiTools: AITool[] = [
             voice: false
         },
         pricing: {
-            plan: "X Premium",
-            startingPrice: 8
+            plan: "Zdarma / Premium",
+            startingPrice: 0
         }
     },
     {
@@ -272,9 +272,9 @@ export const aiTools: AITool[] = [
         name: "Qwen",
         provider: "Alibaba Cloud",
         logo: "/logos/Qwen_logo.svg",
-        website: "https://tongyi.aliyun.com",
-        shortDescription: "Multimodální gigant s nejlepší úpravou obrázků.",
-        description: "Qwen3-Max od Alibaba je top-tier model konkurující GPT-5 a Claude Opus 4. Speciální Qwen-Image-Edit model nabízí nejlepší AI úpravu obrázků na trhu - od přesných textových úprav po kompletní sémantické změny.",
+        website: "https://chat.qwen.ai",
+        shortDescription: "Váš AI kamarád pro rodinu a tvoření.",
+        description: "Qwen je jako chytrý kamarád, který pomůže s úkoly, vymyslí hru pro děti nebo naplánuje dovolenou. Mluví skvěle česky a je velmi flexibilní – není to 'suchar'. Má aktuální znalosti a dbá na bezpečnost dětí.",
         models: [
             {
                 id: "qwen3-max",
@@ -293,9 +293,9 @@ export const aiTools: AITool[] = [
                 description: "Vision-Language model pro multimodální úkoly."
             }
         ],
-        bestFor: ["Úprava a editace obrázků", "Multimodální analýza", "Precizní textové úpravy v obrázcích", "Generování obrázků"],
-        pros: ["Nejlepší AI úprava obrázků", "Výkon srovnatelný s GPT-5", "Štědré bezplatné limity", "Integrace s Alibaba ekosystémem"],
-        cons: ["Méně známý na západě", "UI primárně v čínštině", "Omezená dokumentace v angličtině"],
+        bestFor: ["Rodinné aktivity a zábava", "Pomoc s úkoly a učením", "Tvoření a kreativita", "Plánování"],
+        pros: ["Přátelský a neformální tón", "Bezpečný pro rodinu", "Multijazyčnost (čeština, angličtina...)", "Aktuální znalosti"],
+        cons: ["Méně známý na západě", "UI primárně v čínštině (ale chat česky)", "Omezená dokumentace"],
         features: {
             imageGeneration: true,
             webSearch: true,
